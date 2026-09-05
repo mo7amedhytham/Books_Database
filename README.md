@@ -1,16 +1,18 @@
 # 📚 Books & Authors Database
 
-A basic **PostgreSQL**-based relational database project designed to power a books-and-authors catalog website. It models books, authors, genres, and publishers, along with the relationships between them, and provides sample SQL to set up, seed, and query the database.
+A basic **PostgreSQL**-based relational database project built on the **PEN stack** (PostgreSQL, Express, Node.js), designed to power a books-and-authors catalog as a standalone REST API. It models books, authors, genres, and publishers, along with the relationships between them, and provides sample SQL to set up, seed, and query the database.
 
 ---
 
-## 🧱 Tech Stack
+## 🧱 Tech Stack (PEN)
 
-- **Database:** PostgreSQL
-- **Backend:** Node.js + Express
+- **P — PostgreSQL:** relational database
+- **E — Express:** REST API framework
+- **N — Node.js:** runtime
 - **DB Driver:** [`pg`](https://node-postgres.com/) (node-postgres)
 - **Language:** JavaScript (SQL for DDL/DML)
-- *(Optional)*: EJS/HTML/CSS/JS frontend, or use the API as a standalone REST service
+
+This project is API-only by design — no frontend framework is bundled. Consume the endpoints from whatever client you like (plain HTML/JS, a mobile app, Postman, curl, etc.).
 
 ---
 
@@ -103,20 +105,22 @@ books-authors-db/
 ### 2. Create the database
 
 ```bash
-createdb books_authors_db
+createdb -p 1530 books_authors_db
 ```
 
 ### 3. Run the schema
 
 ```bash
-psql -d books_authors_db -f sql/schema.sql
+psql -p 1530 -d books_authors_db -f sql/schema.sql
 ```
 
 ### 4. Seed sample data
 
 ```bash
-psql -d books_authors_db -f sql/seed.sql
+psql -p 1530 -d books_authors_db -f sql/seed.sql
 ```
+
+> Replace `1530` with your actual PostgreSQL port if different — check `postgresql.conf` if unsure.
 
 ### 5. Install dependencies
 
@@ -297,11 +301,13 @@ module.exports = router;
 ```env
 PORT=3000
 DB_HOST=localhost
-DB_PORT=5432
+DB_PORT=1530
 DB_NAME=books_authors_db
 DB_USER=your_username
 DB_PASSWORD=your_password
 ```
+
+> Note: `1530` is a custom PostgreSQL port (the default is `5432`) — make sure it matches whatever `port =` is set to in your `postgresql.conf`.
 
 ---
 
