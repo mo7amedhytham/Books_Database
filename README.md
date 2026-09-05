@@ -1,18 +1,32 @@
+<p align="center">
+  <img src="docs/banner.svg" alt="Books & Authors Database banner" width="100%"/>
+</p>
+
+<p align="center">
+  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-13%2B-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-4.x-000000?style=flat-square&logo=express&logoColor=white" alt="Express"/></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js"/></a>
+  <a href="https://www.npmjs.com/package/pg"><img src="https://img.shields.io/badge/node--postgres-pg-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="node-postgres"/></a>
+  <img src="https://img.shields.io/badge/stack-PEN-1e3a5f?style=flat-square" alt="PEN Stack"/>
+  <img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square" alt="License"/>
+</p>
 # 📚 Books & Authors Database
 
-A basic **PostgreSQL**-based relational database project built on the **PEN stack** (PostgreSQL, Express, Node.js), designed to power a books-and-authors catalog as a standalone REST API. It models books, authors, genres, and publishers, along with the relationships between them, and provides sample SQL to set up, seed, and query the database.
+A basic **[PostgreSQL](https://www.postgresql.org/)**-based relational database project built on the **PEN stack** ([PostgreSQL](https://www.postgresql.org/), [Express](https://expressjs.com/), [Node.js](https://nodejs.org/)), designed to power a books-and-authors catalog as a standalone REST API. It models books, authors, genres, and publishers, along with the relationships between them, and provides sample SQL to set up, seed, and query the database.
 
 ---
+<p align="center">
+  <img src="docs/techstack.svg" alt="Books & Authors Database banner" width=100%"/>
 
 ## 🧱 Tech Stack (PEN)
 
-- **P — PostgreSQL:** relational database
-- **E — Express:** REST API framework
-- **N — Node.js:** runtime
+- **P — [PostgreSQL](https://www.postgresql.org/docs/):** relational database
+- **E — [Express](https://expressjs.com/en/guide/routing.html):** REST API framework
+- **N — [Node.js](https://nodejs.org/en/docs):** runtime
 - **DB Driver:** [`pg`](https://node-postgres.com/) (node-postgres)
 - **Language:** JavaScript (SQL for DDL/DML)
 
-This project is API-only by design — no frontend framework is bundled. Consume the endpoints from whatever client you like (plain HTML/JS, a mobile app, Postman, curl, etc.).
+This project is API-only by design — no frontend framework is bundled. Consume the endpoints from whatever client you like (plain HTML/JS, a mobile app, [Postman](https://www.postman.com/), curl, etc.).
 
 ---
 
@@ -40,6 +54,7 @@ books-authors-db/
 │       └── genresController.js
 │
 ├── docs/
+│   ├── banner.svg          # README header artwork
 │   └── er-diagram.png      # Entity-Relationship diagram (optional)
 │
 ├── .env.example             # Environment variable template
@@ -98,9 +113,9 @@ books-authors-db/
 ## ⚙️ Setup Instructions
 
 ### 1. Prerequisites
-- Node.js (v18+ recommended) and npm
-- PostgreSQL installed (v13+ recommended)
-- `psql` CLI or a GUI tool like pgAdmin/DBeaver
+- [Node.js](https://nodejs.org/) (v18+ recommended) and npm
+- [PostgreSQL](https://www.postgresql.org/download/) installed (v13+ recommended)
+- [`psql`](https://www.postgresql.org/docs/current/app-psql.html) CLI or a GUI tool like [pgAdmin](https://www.pgadmin.org/)/[DBeaver](https://dbeaver.io/)
 
 ### 2. Create the database
 
@@ -128,7 +143,7 @@ psql -p 1530 -d books_authors_db -f sql/seed.sql
 npm install
 ```
 
-`package.json` dependencies typically include:
+`package.json` dependencies typically include ([Express](https://www.npmjs.com/package/express), [pg](https://www.npmjs.com/package/pg), [dotenv](https://www.npmjs.com/package/dotenv), [nodemon](https://www.npmjs.com/package/nodemon)):
 
 ```json
 {
@@ -323,3 +338,9 @@ DB_PASSWORD=your_password
 ## 📄 License
 
 This project is open-source and available for learning/demo purposes.
+
+---
+
+<p align="center">
+  Built with 🐘 <a href="https://www.postgresql.org/">PostgreSQL</a> · 🚂 <a href="https://expressjs.com/">Express</a> · 🟩 <a href="https://nodejs.org/">Node.js</a>
+</p>
