@@ -142,5 +142,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Batch Script files
+# Script files
 *.bat
+*.sh
+*.bash
